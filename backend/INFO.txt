@@ -1,0 +1,80 @@
+## Webpack:
+    Comprime todo en un mismo archivo para que sea posible ejectuarlo (main.js)
+
+## Knox:
+    La extensión se encarga de gestionar los tokens producidos al registrar un usuario y los manda en el header
+        para que la aplicación muestre/habilite todas las funciones/pantallas asociadas a los credenciales del
+        usuario registrado.
+
+## React
+    #React-DOM: Es el responsable de mostrar nuestra aplicación en el navegador como un objeto modelo.
+
+## Redux
+    # Herramienta Chrome: desde el navegador chrome, instalando redux-devtools extension se puede analizar las peticiones
+                            al servidor y la respuesta del mismo
+    # Provider:  Unifica todo elemento dentro de REACT para mostrarlo dentro de Redux
+
+## Django-Rest-knox
+    Autenticación con token a través de este framework
+
+## Serializers
+    Archivos de python que permiten una sencilla conversión a .JSON, XML
+        Toma el modelo creado en django y permite un tratado de la información en las extensiones especificadas
+
+## Babel
+    Encargado de traducir los archivos de JavaScript y compilarlos para su ejecución
+        # babel-loader: Necesario para la traducción del lenguaje a webpack
+        # babel-preset: Toma versiones superiores de JS2015 y necesita un preset para cada version
+                        También permite incluir las dependencias externas que se quiera utilizar (p.e. REACT)
+
+## Webpack:
+    Webpack toma módulos con dependencias y genera activos estáticos que representan esos módulos
+
+
+
+
+#### PYTHON FILES
+    ## student/api.py
+        # Viewset: Permite crear una CRUD API sin especificar ciertos comportamientos predeterminados
+        # Permisos: En esta sección se permite definir cuales serán los credenciales necesarios para acceder al modelo
+                    AllowAny,etc...
+
+    ## student/url.py
+        # Router: Crea un punto final donde se van a realizar las solicitudes CRUD
+
+    ## accounts/api.py
+        # RegisterAPI
+            API diseñada para el registro de los usuarios,
+            Response devuelve los datos del usuario y un token creado particularmente para cada usuario
+
+
+#### JS FILES
+
+## webpack.config.js
+    Este archivo se utiliza para especificar cuál va a ser el loader de babel dentro de nuestra aplicación
+    Determina que para cada archivo de Javascript el loader va a ser el especificado
+
+## reducers/students.js
+    Esta función recibe una acción y responde con un estado dependiendo de la entrada a la función
+        - Añadir usuario
+        - Eliminar usuario
+        - Modificar usuario
+
+## actions/types.js
+    Este archivo almacena las variables constantes con los strings de las acciones que se van a analizar/ejecutar
+    sobre la app students (App.js)
+
+## layout/alerts.js
+    Este archivo gestiona los mensajes de error enviados por el navegador y los introduce como alerta en pantalla
+
+
+#### JSON FILES
+
+## package.json
+    "scripts":
+        - Introduce el compilador de .js que quieres introducir dentro de Index.html
+        - Hay dos modos de ejecución:
+            ·   dev: entornon de desarrollo (utilizar en el cmd: npm run dev para recompilar los cambios en REACT)
+            ·   build: entorno de producción (utilizar en el cmd: npm run build)
+
+        - --watch: Se utiliza para que no haga falta compilar los datos cada vez que se ejecuta
